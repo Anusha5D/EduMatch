@@ -24,17 +24,8 @@ Dataset used:
 - Pickle (Model Serialization)
 
 ---
+![image](https://github.com/user-attachments/assets/fb91c3ee-9fcb-4b63-abd6-746e7f70e7ee)
+![image](https://github.com/user-attachments/assets/a2fdb015-5c56-4cb3-b9fb-3c7fad225592)
 
-## 🧪 Career Options Covered
 
-| S.No | Career Option             | S.No | Career Option              |
-|------|---------------------------|------|----------------------------|
-| 1    | Lawyer                    | 9    | Writer                     |
-| 2    | Doctor                    | 10   | Accountant                 |
-| 3    | Government Officer        | 11   | Designer                   |
-| 4    | Artist                    | 12   | Construction Engineer      |
-| 5    | Software Engineer         | 13   | Game Developer             |
-| 6    | Teacher                   | 14   | Stock Investor             |
-| 7    | Business Owner            | 15   | Real Estate Developer      |
-| 8    | Scientist                 | 16   | Unknown (if uncertain)     |
 
