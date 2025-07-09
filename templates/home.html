@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EduRecommend</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    .hero {
+      background: linear-gradient(rgba(40, 45, 75, 0.8), rgba(40, 45, 75, 0.8)), url("/static/img_1.png") center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 100px 20px 60px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+
+    .hero h1 span {
+      color: #c88dfc;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 20px auto;
+    }
+
+    .hero .btn-primary, .hero .btn-outline-light {
+      margin: 10px;
+      padding: 12px 28px;
+      font-size: 1rem;
+      border-radius: 30px;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: white;
+    }
+
+    .features {
+      background: #fff;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .features h2 {
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .features .card {
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.05);
+      transition: 0.3s ease;
+    }
+
+    .features .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .cta {
+      background: linear-gradient(to right, #4b2ae5, #9123c5);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    .cta .btn-warning {
+      padding: 14px 30px;
+      font-size: 1.2rem;
+      border-radius: 30px;
+      font-weight: 600;
+      margin-top: 20px;
+    }
+
+    .cta small {
+      display: block;
+      margin-top: 8px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h1>Find Your Perfect <span>Academic Path</span></h1>
+    <p>Our AI-powered recommendation system helps university students discover the most suitable studies and courses based on their academic performance, interests, and career aspirations.</p>
+    <a href="/recommend" class="btn btn-primary">Get Recommendations</a>
+    <a href="#features" class="btn btn-outline-light">Learn More</a>
+
+    <div class="stats">
+      <div class="stat-item">🎓 10K+<br><small>Students Helped</small></div>
+      <div class="stat-item">📚 500+<br><small>Course Options</small></div>
+      <div class="stat-item">⭐ 95%<br><small>Success Rate</small></div>
+    </div>
+  </section>
+
+  <!-- FEATURES SECTION -->
+  <section class="features" id="features">
+    <h2>Why Choose Our Platform?</h2>
+    <p class="text-muted mb-5">Discover the powerful features that make our recommendation system the perfect choice for your academic journey.</p>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <div class="card p-4">
+            <h5>🧠 AI-Powered Analysis</h5>
+            <p class="text-muted">Advanced algorithms analyze your academic performance, interests, and goals to provide personalized recommendations.</p>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="card p-4">
+            <h5>🎯 Career-Focused Guidance</h5>
+            <p class="text-muted">Get recommendations aligned with your career aspirations and industry trends.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="cta">
+    <h2>Ready to Transform Your <span style="color: #ffd43b;">Academic Future?</span></h2>
+    <p>Join thousands of students who have already discovered their perfect academic path.</p>
+    <a href="/recommend" class="btn btn-warning">Get Started Now →</a>
+    <small>✨ Free to start &nbsp; • &nbsp; No credit card required</small>
+  </section>
+
+</body>
+</html>

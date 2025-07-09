@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Recommendations</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f4f7fe;
+        }
+
+        .header {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+
+        .top-rec-box {
+            background: linear-gradient(135deg, #7f00ff, #e100ff);
+            color: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 25px;
+        }
+
+        .top-rec-box h4 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .card-rec {
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .confidence-tag {
+            font-size: 0.75rem;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 8px;
+        }
+
+        .high { background-color: #d4edda; color: #155724; }
+        .medium { background-color: #fff3cd; color: #856404; }
+
+        .match-bar {
+            height: 10px;
+            border-radius: 5px;
+            background-color: #e9ecef;
+        }
+
+        .match-bar-fill {
+            height: 100%;
+            background-color: #28a745;
+            border-radius: 5px;
+        }
+
+        .footer {
+            background-color: #fff;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="header text-center">
+        <h1 class="font-weight-bold">Study Recommendations</h1>
+        <p class="lead">Personalized academic path suggestions based on your profile</p>
+
+        <div class="row mt-4 text-center">
+            <div class="col-md-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <h5>Top Match</h5>
+                    <h3>{{ recommendations[0][1] }}%</h3>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <h5>Total Options</h5>
+                    <h3>{{ recommendations|length }}</h3>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <h5>High Confidence</h5>
+                    <h3>{{ high_conf_count }}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Top Recommendation -->
+    <div class="top-rec-box">
+        <h4>Top Recommendation</h4>
+        <h2 class="mb-1">{{ recommendations[0][0] }}</h2>
+        <p>Best match for your profile and interests</p>
+        <strong>Confidence:</strong> {{ recommendations[0][1] }}%
+    </div>
+
+    <!-- Other Recommendations -->
+    <h4 class="mb-4">Other Recommendations</h4>
+    <div class="row">
+        {% for rec in recommendations[1:] %}
+        <div class="col-md-6">
+            <div class="card shadow-sm card-rec">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="badge confidence-tag {% if rec[1] >= 70 %}high{% else %}medium{% endif %}">
+                            {% if rec[1] >= 70 %}High{% else %}Medium{% endif %}
+                        </span>
+                        <span class="text-muted">#{{ loop.index }}</span>
+                    </div>
+                    <h5 class="card-title">{{ rec[0] }}</h5>
+                    <p class="card-text">Match Probability</p>
+                    <div class="match-bar mb-2">
+                        <div class="match-bar-fill" style="width: {{ rec[1]|default(0, true) }}%;"></div>
+                    </div>
+                    <p class="mb-2"><strong>{{ rec[1] }}%</strong> match</p>
+                    <a href="#" class="btn btn-sm btn-outline-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Explanation -->
+    <div class="footer mt-5">
+        <h5>How We Calculate Recommendations</h5>
+        <p>
+            Our recommendation system analyzes your academic background, interests, career goals, and skills to suggest the most suitable study programs. The probability scores indicate how well each program aligns with your profile, helping you make informed decisions about your educational journey.
+        </p>
+    </div>
+</div>
+
+</body>
+</html>
